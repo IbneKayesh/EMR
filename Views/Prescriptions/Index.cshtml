@@ -1,0 +1,177 @@
+﻿@{
+    ViewData["Title"] = "Prescribe";
+}
+<div class="col-md-12">
+    <div class="row">
+        <div class="col-md-9">
+            <div class="card card-default color-palette-box">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <p>TOK-0001</p>
+                        </div>
+                        <div class="col-md-3">
+                            <p>New Visit</p>
+                        </div>
+                        <div class="col-md-3">
+                            <p>ABC Care Ltd</p>
+                        </div>
+                        <div class="col-md-3">
+                            <p>Dr. Carefull</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <p>Mr Seek (Male,AB+)</p>
+                        </div>
+                        <div class="col-md-2">
+                            <p>24 Year 14 Days</p>
+                        </div>
+                        <div class="col-md-6">
+                            <p>Seasonal Fever and Allergy</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <p>Temp: 101/F</p>
+                        </div>
+                        <div class="col-md-2">
+                            <p>BP: 120/90</p>
+                        </div>
+                        <div class="col-md-6">
+                            <p>Weight: 64 KG</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card card-default color-palette-box">
+                <div class="card-body">
+                    <p>TOK-X001</p>
+                    <p>TOK-X034</p>
+                    <p>TOK-X540</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-md-12">
+    <div class="row">
+        <div class="col-md-2">
+            <div class="card card-secondary card-outline">
+                <div class="card-header">
+                    <h3 class="card-title">
+                        <i class="fas fa-edit"></i>
+                        Latest
+                    </h3>
+                </div>
+                <div class="card-body">
+                    <p>TOK-0001</p>
+                    <p>TOK-0002</p>
+                    <p>TOK-0003</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-8">
+            <div class="card card-primary card-outline card-outline-tabs">
+                <div class="card-header p-0 border-bottom-0">
+                    <ul class="nav nav-tabs" id="custom-tabs-four-tab" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="custom-tabs-four-medicine-tab" data-toggle="pill" href="#custom-tabs-four-medicine" role="tab" aria-controls="custom-tabs-four-medicine" aria-selected="true">Medicine</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="custom-tabs-four-investigation-tab" data-toggle="pill" href="#custom-tabs-four-investigation" role="tab" aria-controls="custom-tabs-four-investigation" aria-selected="false">Investigation</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="custom-tabs-four-advice-tab" data-toggle="pill" href="#custom-tabs-four-advice" role="tab" aria-controls="custom-tabs-four-advice" aria-selected="false">Advice</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="custom-tabs-four-settings-tab" data-toggle="pill" href="#custom-tabs-four-settings" role="tab" aria-controls="custom-tabs-four-settings" aria-selected="false">Settings</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="card-body">
+                    <div class="tab-content" id="custom-tabs-four-tabContent">
+                        <div class="tab-pane fade active show" id="custom-tabs-four-medicine" role="tabpanel" aria-labelledby="custom-tabs-four-medicine-tab">
+                            <div class="row table-responsive">
+                                <table class="table">
+                                    <tr>
+                                        <td>Napa Extra</td>
+                                        <td>5 Days</td>
+                                        <td>1-0-1</td>
+                                        <td>after taking meal</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Soda Plus</td>
+                                        <td>2 Days</td>
+                                        <td>0-0-1</td>
+                                        <td>with ice water</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Zeros</td>
+                                        <td>15 Days</td>
+                                        <td>1-0-0</td>
+                                        <td>1hr before taking meal</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="custom-tabs-four-investigation" role="tabpanel" aria-labelledby="custom-tabs-four-investigation-tab">
+                            <div class="row table-responsive">
+                                <table class="table">
+                                    <tr>
+                                        <td>Yellow Test</td>
+                                        <td>from Thanks Care Ltd</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Pink Test</td>
+                                        <td>from Thanks Care Ltd</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="custom-tabs-four-advice" role="tabpanel" aria-labelledby="custom-tabs-four-advice-tab">
+                            <div class="row">
+                                <table class="table">
+                                    <tr>
+                                        <td>
+                                            <input type="checkbox" id="admission" name="admission" value="admit">
+                                            <label for="admission"> Take Hospital admission</label>
+                                        </td>
+                                        <td>Take bath regularly</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <input class="form-control" type="text" value="Take 3 days full bed rest" />
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="custom-tabs-four-settings" role="tabpanel" aria-labelledby="custom-tabs-four-settings-tab">
+                            Pellentesque vestibulum commodo nibh nec blandit. Maecenas neque magna, iaculis tempus turpis ac, ornare sodales tellus. Mauris eget blandit dolor. Quisque tincidunt venenatis vulputate. Morbi euismod molestie tristique. Vestibulum consectetur dolor a vestibulum pharetra. Donec interdum placerat urna nec pharetra. Etiam eget dapibus orci, eget aliquet urna. Nunc at consequat diam. Nunc et felis ut nisl commodo dignissim. In hac habitasse platea dictumst. Praesent imperdiet accumsan ex sit amet facilisis.
+                        </div>
+                    </div>
+                </div>
+                <!-- /.card -->
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="card card-secondary card-outline">
+                <div class="card-header">
+                    <h3 class="card-title">
+                        <i class="fas fa-edit"></i>
+                        Todays
+                    </h3>
+                </div>
+                <div class="card-body">
+                    <p>Visits: 14</p>
+                    <p>Re-Visits: 5</p>
+                    <p>Reports: 2</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
