@@ -17,9 +17,6 @@ namespace EMR.Models
         [Required(ErrorMessage = "{0} is required")]
         public string DRUGS_NAME { get; set; }
 
-        /// <summary>
-        /// //
-        /// </summary>
 
         [Display(Name = "Categorie")]
         [Required(ErrorMessage = "{0} is required")]
