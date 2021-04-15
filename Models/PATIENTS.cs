@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace EMR.Models
 {
-    public class PATIENTS
+    public class PATIENTS : DEFAULT
     {
         [Key, DatabaseGenerated(DatabaseGeneratedOption.None)]
         public string MOBILE_NUMBER { get; set; }
