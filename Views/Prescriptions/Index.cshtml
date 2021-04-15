@@ -1,26 +1,288 @@
-﻿@{
+﻿@model EMR.Models.PRESCRIPTIONS
+@{
     ViewData["Title"] = "Prescribe";
+
 }
 
-<div data-label="Example" class="df-example demo-forms">
-    <form id="form1" class="needs-validation was-validated" novalidate>
-        <div class="row row-sm mg-b-10">
-            <div class="col-sm-6">
-                <input type="text" class="form-control" placeholder="Valid state">
-                <div class="valid-feedback">Looks good!</div>
+<div class="card card-body">
+    <form asp-action="Index" asp-controller="Prescriptions" method="post" id="myForm">
+        <div data-label="Patient" class="df-example">
+            <input hidden asp-for="ID" />
+            <input hidden asp-for="DOCTORS_ID" />
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label asp-for="PATIENTS_MOBILE_NUMBER" class="control-label"></label>
+                        <input asp-for="PATIENTS_MOBILE_NUMBER" class="form-control input-sm" />
+                        <span asp-validation-for="PATIENTS_MOBILE_NUMBER" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label asp-for="PATIENTS_NAME" class="control-label"></label>
+                        <input asp-for="PATIENTS_NAME" class="form-control input-sm" />
+                        <span asp-validation-for="PATIENTS_NAME" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col">
+                                <label asp-for="AGE_YEAR" class="control-label"></label>
+                                <input asp-for="AGE_YEAR" class="form-control input-sm" />
+                                <span asp-validation-for="AGE_YEAR" class="text-danger"></span>
+                            </div>
+                            <div class="col">
+                                <label asp-for="AGE_MONTH" class="control-label"></label>
+                                <input asp-for="AGE_MONTH" class="form-control input-sm" />
+                                <span asp-validation-for="AGE_MONTH" class="text-danger"></span>
+                            </div>
+                            <div class="col">
+                                <label asp-for="AGE_DAYS" class="control-label"></label>
+                                <input asp-for="AGE_DAYS" class="form-control input-sm" />
+                                <span asp-validation-for="AGE_DAYS" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col">
+                                <label asp-for="PATIENTS_SEX" class="control-label"></label>
+                                <input asp-for="PATIENTS_SEX" class="form-control input-sm" />
+                                <span asp-validation-for="PATIENTS_SEX" class="text-danger"></span>
+                            </div>
+                            <div class="col">
+                                <label asp-for="BLOOD_GROUP" class="control-label"></label>
+                                <input asp-for="BLOOD_GROUP" class="form-control input-sm" />
+                                <span asp-validation-for="BLOOD_GROUP" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
             </div>
-            <div class="col-sm-6 mg-t-10 mg-sm-t-0">
-                <input type="text" class="form-control" placeholder="Invalid state" required>
-                <div class="invalid-feedback">This is required</div>
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col">
+                                <label asp-for="BP" class="control-label"></label>
+                                <input asp-for="BP" class="form-control input-sm" />
+                                <span asp-validation-for="BP" class="text-danger"></span>
+                            </div>
+                            <div class="col">
+                                <label asp-for="TEMPERATURE" class="control-label"></label>
+                                <input asp-for="TEMPERATURE" class="form-control input-sm" />
+                                <span asp-validation-for="TEMPERATURE" class="text-danger"></span>
+                            </div>
+                            <div class="col">
+                                <label asp-for="WEIGHT" class="control-label"></label>
+                                <input asp-for="WEIGHT" class="form-control input-sm" />
+                                <span asp-validation-for="WEIGHT" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="form-group">
+                        <label asp-for="PROBLEMS" class="control-label"></label>
+                        <input asp-for="PROBLEMS" class="form-control input-sm" />
+                        <span asp-validation-for="PROBLEMS" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col">
+                                <label asp-for="VISIT_TYPE" class="control-label"></label>
+                                <input asp-for="VISIT_TYPE" class="form-control input-sm" />
+                                <span asp-validation-for="VISIT_TYPE" class="text-danger"></span>
+                            </div>
+                            <div class="col">
+                                <label asp-for="VISIT_FEES" class="control-label"></label>
+                                <input asp-for="VISIT_FEES" class="form-control input-sm" />
+                                <span asp-validation-for="VISIT_FEES" class="text-danger"></span>
+                            </div>
+                            <div class="col">
+                                <label asp-for="REF_PRESCRIPTIONS_NUMBER" class="control-label"></label>
+                                <input asp-for="REF_PRESCRIPTIONS_NUMBER" class="form-control input-sm" />
+                                <span asp-validation-for="REF_PRESCRIPTIONS_NUMBER" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="col-sm-6 mg-t-10">
-                <textarea class="form-control" rows="2" placeholder="Valid state"></textarea>
-                <div class="valid-feedback">Looks good!</div>
+        </div>
+        <div data-label="Rx/" class="df-example">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="drugs-tab" data-toggle="tab" href="#drugs" role="tab" aria-controls="drugs" aria-selected="true">Drugs</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="investigations-tab" data-toggle="tab" href="#investigations" role="tab" aria-controls="investigations" aria-selected="false">Investigations</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Contact</a>
+                </li>
+            </ul>
+            <div class="tab-content bd bd-gray-300 bd-t-0 pd-20" id="myTabContent">
+                <div class="tab-pane fade show active" id="drugs" role="tabpanel" aria-labelledby="drugs-tab">
+                    <div class="row">
+                        <div class="col">
+                            <input id="drugs_name" type="text" class="form-control input-sm" placeholder="Drugs Name">
+                        </div>
+                        <div class="col">
+                            <input id="frequency" type="text" class="form-control input-sm" placeholder="Frequency">
+                        </div>
+                        <div class="col">
+                            <input id="duration" type="text" class="form-control input-sm" placeholder="Duration">
+                        </div>
+                        <div class="col">
+                            <input type="button" value="Add" class="btn btn-primary input-sm" onclick="addDrugrs();">
+                        </div>
+                    </div>
+                    <br />
+                    <div class="row">
+                        <div class="table-responsive">
+                            <table id="tblDrugs" class="table table-sm table-bordered">
+                                <thead class="table-secondary">
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Frequency</th>
+                                        <th>Duration</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="investigations" role="tabpanel" aria-labelledby="investigations-tab">
+                    <div class="row">
+                        <div class="col">
+                            <input id="invest_name" type="text" class="form-control input-sm" placeholder="Investigation Name">
+                        </div>
+                        <div class="col">
+                            <input id="invest_instr" type="text" class="form-control input-sm" placeholder="Instruction">
+                        </div>
+                        <div class="col">
+                            <input id="ref_diagnostic" type="text" class="form-control input-sm" placeholder="Ref. Diagnostics">
+                        </div>
+                        <div class="col">
+                            <input type="button" value="Add" class="btn btn-primary input-sm" onclick="addInves();">
+                        </div>
+                    </div>
+                    <br />
+                    <div class="row">
+                        <div class="table-responsive">
+                            <table id="tblInves" class="table table-sm table-bordered">
+                                <thead class="table-secondary">
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Instruction</th>
+                                        <th>Ref. Diagnostics</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                    <h6>Contact</h6>
+                    <p>...</p>
+                </div>
             </div>
-            <div class="col-sm-6 mg-t-10">
-                <textarea class="form-control" rows="2" placeholder="Invalid state" required></textarea>
-                <div class="invalid-feedback">This is required</div>
-            </div>
-        </div><!-- row -->
+        </div>
+        <input id="saveForm" type="submit" value="save"/>
     </form>
-</div><!-- df-example -->
+</div>
+
+@section scripts{
+    <script>
+        function addDrugrs() {
+            var drugsName = $.trim($("#drugs_name").val()),
+                frequEncy = $.trim($("#frequency").val()),
+                duraTion = $.trim($("#duration").val()),
+                tblDrugsBody = $("#tblDrugs tbody");
+            if (drugsName == "" || frequEncy == "" || duraTion == "") {
+                Swal.fire('enter valid information');
+                return;
+            };
+            var list_drugsItem = '<tr><td><select><option value="' + drugsName + '">' + drugsName + '</option></select></td><td><input type="text" value="' + frequEncy + '"></td><td><input type="text" value="' + duraTion + '"></td><td><a href="#" class="badge badge-danger delDrugItem">Del</a></td></tr>';
+            tblDrugsBody.append(list_drugsItem);
+        };
+        $('#tblDrugs tbody').on('click', 'tr .delDrugItem', function (e) {
+            e.preventDefault();
+            $(this).closest('tr').fadeOut("slow", function () {
+                $(this).remove();
+            });
+        });
+
+        function addInves() {
+            var investName = $.trim($("#invest_name").val()),
+                investInstr = $.trim($("#invest_instr").val()),
+                refDiagnostic = $.trim($("#ref_diagnostic").val()),
+                tblInvesBody = $("#tblInves tbody");
+            if (investName == "" || investInstr == "" || refDiagnostic == "") {
+                Swal.fire('enter valid information');
+                return;
+            };
+            var list_invesItem = '<tr><td><select><option value="' + investName + '">' + investName + '</option></select></td><td><input type="text" value="' + investInstr + '"></td><td><input type="text" value="' + refDiagnostic + '"></td><td><a href="#" class="badge badge-danger delInvesItem">Del</a></td></tr>';
+            tblInvesBody.append(list_invesItem);
+        };
+        $('#tblInves tbody').on('click', 'tr .delInvesItem', function (e) {
+            e.preventDefault();
+            $(this).closest('tr').fadeOut("slow", function () {
+                $(this).remove();
+            });
+        });
+
+
+        $(document).ready(function () {
+            $("#saveForm").on("click", function () {
+                var lstName = "PRESCRIPTIONS_DRUGS";
+                var sl = 0;
+                $("#tblDrugs > tbody > tr").each(function () {
+                    var drugId = $(this).find('td:eq(0)').find('select').val();
+                    var drugName = $(this).find('td:eq(0)').find('select').text();
+                    var frqnc = $(this).find('td:eq(1) input').val();
+                    var durtn = $(this).find('td:eq(2) input').val();
+                    if (drugName == "") {
+                        Swal.fire('enter a drug name');
+                        return;
+                    }
+                    $("#myForm").prepend("<input type='hidden' name='" + lstName + "[" + sl + "].DRUGS_ID' value='" + drugId + "'>");
+                    $("#myForm").prepend("<input type='hidden' name='" + lstName + "[" + sl + "].DRUGS_NAME' value='" + drugName + "'>");
+                    $("#myForm").prepend("<input type='hidden' name='" + lstName + "[" + sl + "].FREQUENCY' value='" + frqnc + "'>");
+                    $("#myForm").prepend("<input type='hidden' name='" + lstName + "[" + sl + "].DURATION' value='" + durtn + "'>");
+                    sl += 1;
+                });
+
+                var lstName2 = "PRESCRIPTIONS_INVES";
+                var sl2 = 0;
+                $("#tblInves > tbody > tr").each(function () {
+                    var invesId = $(this).find('td:eq(0)').find('select').val();
+                    var invesName = $(this).find('td:eq(0)').find('select').text();
+                    var instruc = $(this).find('td:eq(1) input').val();
+                    var refDiag = $(this).find('td:eq(2) input').val();
+                    if (invesName == "") {
+                        Swal.fire('enter a investigation name');
+                        return;
+                    }
+                    $("#myForm").prepend("<input type='hidden' name='" + lstName2 + "[" + sl2 + "].INVESTIGATIONS_ID' value='" + invesId + "'>");
+                    $("#myForm").prepend("<input type='hidden' name='" + lstName2 + "[" + sl2 + "].INVESTIGATIONS_NAME' value='" + invesName + "'>");
+                    $("#myForm").prepend("<input type='hidden' name='" + lstName2 + "[" + sl2 + "].INSTRUCTIONS' value='" + instruc + "'>");
+                    $("#myForm").prepend("<input type='hidden' name='" + lstName2 + "[" + sl2 + "].REF_DIAGNOSTICS' value='" + refDiag + "'>");
+                    sl2 += 1;
+                });
+            });
+        });
+    </script>
+}

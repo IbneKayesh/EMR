@@ -38,6 +38,9 @@
     <link href="~/lib/fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
     <link href="~/lib/ionicons/css/ionicons.min.css" rel="stylesheet">
 
+    <!-- SweetAlert2 -->
+    <link rel="stylesheet" href="~/lib/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
+
     <!-- DashForge CSS -->
     <link rel="stylesheet" href="~/assets/css/dashforge.css">
     <link rel="stylesheet" href="~/assets/css/dashforge.demo.css">
@@ -250,7 +253,7 @@
     </header><!-- navbar -->
 
     <div class="content content-fixed">
-        <div class="container pd-x-0 pd-lg-x-10 pd-xl-x-0">
+        <div class="container">
             <div class="d-sm-flex align-items-center justify-content-between mg-b-20 mg-lg-b-25 mg-xl-b-30">
                 <div>
                     <nav aria-label="breadcrumb">
@@ -259,19 +262,9 @@
                             <li class="breadcrumb-item active" aria-current="page">@ViewData["Title"]</li>
                         </ol>
                     </nav>
-                    <h4 class="mg-b-0 tx-spacing--1">Welcome to Dashboard</h4>
-                </div>
-                <div class="d-none d-md-block">
-                    <button class="btn btn-sm pd-x-15 btn-white btn-uppercase"><i data-feather="save" class="wd-10 mg-r-5"></i> Save</button>
-                    <button class="btn btn-sm pd-x-15 btn-white btn-uppercase mg-l-5"><i data-feather="upload" class="wd-10 mg-r-5"></i> Export</button>
-                    <button class="btn btn-sm pd-x-15 btn-white btn-uppercase mg-l-5"><i data-feather="share-2" class="wd-10 mg-r-5"></i> Share</button>
-                    <button class="btn btn-sm pd-x-15 btn-primary btn-uppercase mg-l-5"><i data-feather="sliders" class="wd-10 mg-r-5"></i> Settings</button>
                 </div>
             </div>
-
-            <div class="row row-xs">
-             @RenderBody()
-            </div><!-- row -->
+            @RenderBody()
         </div><!-- container -->
     </div><!-- content -->
 
@@ -295,16 +288,14 @@
     <script src="~/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="~/lib/feather-icons/feather.min.js"></script>
     <script src="~/lib/perfect-scrollbar/perfect-scrollbar.min.js"></script>
-    <script src="~/lib/chart.js/Chart.bundle.min.js"></script>
-    <script src="~/lib/jquery.flot/jquery.flot.js"></script>
-    <script src="~/lib/jquery.flot/jquery.flot.stack.js"></script>
-    <script src="~/lib/jquery.flot/jquery.flot.resize.js"></script>
 
     <script src="~/assets/js/dashforge.js"></script>
-    <script src="~/assets/js/dashforge.sampledata.js"></script>
 
+    <!-- SweetAlert2 -->
+    <script src="~/lib/sweetalert2/sweetalert2.min.js"></script>
     <!-- append theme customizer -->
     <script src="~/lib/js-cookie/js.cookie.js"></script>
     <script src="~/assets/js/dashforge.settings.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
