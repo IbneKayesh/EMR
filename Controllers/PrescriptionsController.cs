@@ -23,17 +23,27 @@ namespace EMR.Controllers
         [HttpPost]
         public IActionResult Index(PRESCRIPTIONS obj)
         {
-            obj.PRESCRIBE_DATE = DateTime.Now;
-
             using var trn = db.Database.BeginTransaction();
             try
             {
                 db.PRESCRIPTIONS.Add(obj);
                 db.SaveChanges();
-                db.PRESCRIPTIONS_DRUGS.AddRange(obj.PRESCRIPTIONS_DRUGS);
-                db.SaveChanges();
-                db.PRESCRIPTIONS_INVES.AddRange(obj.PRESCRIPTIONS_INVES);
-                db.SaveChanges();
+                if (obj.PRESCRIPTIONS_DRUGS != null)
+                {
+                    int l = 1;
+                    foreach (var item in obj.PRESCRIPTIONS_DRUGS)
+                    {
+                        item.LINE_NO = l;
+                        db.PRESCRIPTIONS_DRUGS.Add(item);
+                        l++;
+                    }
+                    db.SaveChanges();
+                }
+                if (obj.PRESCRIPTIONS_INVES != null)
+                {
+                    db.PRESCRIPTIONS_INVES.AddRange(obj.PRESCRIPTIONS_INVES);
+                    db.SaveChanges();
+                }
                 trn.Commit();
             }
             catch (Exception ex)

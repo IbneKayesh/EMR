@@ -8,19 +8,19 @@
     <form asp-action="Index" asp-controller="Prescriptions" method="post" id="myForm">
         <div data-label="Patient" class="df-example">
             <input hidden asp-for="ID" />
-            <input hidden asp-for="DOCTORS_ID" />
+            <input hidden asp-for="DOCTORS_ID"/>
             <div class="row">
                 <div class="col-md-3">
                     <div class="form-group">
                         <label asp-for="PATIENTS_MOBILE_NUMBER" class="control-label"></label>
-                        <input asp-for="PATIENTS_MOBILE_NUMBER" class="form-control input-sm" />
+                        <input asp-for="PATIENTS_MOBILE_NUMBER" class="form-control input-sm"/>
                         <span asp-validation-for="PATIENTS_MOBILE_NUMBER" class="text-danger"></span>
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="form-group">
                         <label asp-for="PATIENTS_NAME" class="control-label"></label>
-                        <input asp-for="PATIENTS_NAME" class="form-control input-sm" />
+                        <input asp-for="PATIENTS_NAME" class="form-control input-sm"/>
                         <span asp-validation-for="PATIENTS_NAME" class="text-danger"></span>
                     </div>
                 </div>
@@ -29,7 +29,7 @@
                         <div class="row">
                             <div class="col">
                                 <label asp-for="AGE_YEAR" class="control-label"></label>
-                                <input asp-for="AGE_YEAR" class="form-control input-sm" />
+                                <input asp-for="AGE_YEAR" class="form-control input-sm"/>
                                 <span asp-validation-for="AGE_YEAR" class="text-danger"></span>
                             </div>
                             <div class="col">
@@ -50,12 +50,12 @@
                         <div class="row">
                             <div class="col">
                                 <label asp-for="PATIENTS_SEX" class="control-label"></label>
-                                <input asp-for="PATIENTS_SEX" class="form-control input-sm" />
+                                <input asp-for="PATIENTS_SEX" class="form-control input-sm" value="Male"/>
                                 <span asp-validation-for="PATIENTS_SEX" class="text-danger"></span>
                             </div>
                             <div class="col">
                                 <label asp-for="BLOOD_GROUP" class="control-label"></label>
-                                <input asp-for="BLOOD_GROUP" class="form-control input-sm" />
+                                <input asp-for="BLOOD_GROUP" class="form-control input-sm" value="O+" />
                                 <span asp-validation-for="BLOOD_GROUP" class="text-danger"></span>
                             </div>
                         </div>
@@ -69,17 +69,17 @@
                         <div class="row">
                             <div class="col">
                                 <label asp-for="BP" class="control-label"></label>
-                                <input asp-for="BP" class="form-control input-sm" />
+                                <input asp-for="BP" class="form-control input-sm"/>
                                 <span asp-validation-for="BP" class="text-danger"></span>
                             </div>
                             <div class="col">
                                 <label asp-for="TEMPERATURE" class="control-label"></label>
-                                <input asp-for="TEMPERATURE" class="form-control input-sm" />
+                                <input asp-for="TEMPERATURE" class="form-control input-sm"/>
                                 <span asp-validation-for="TEMPERATURE" class="text-danger"></span>
                             </div>
                             <div class="col">
                                 <label asp-for="WEIGHT" class="control-label"></label>
-                                <input asp-for="WEIGHT" class="form-control input-sm" />
+                                <input asp-for="WEIGHT" class="form-control input-sm"/>
                                 <span asp-validation-for="WEIGHT" class="text-danger"></span>
                             </div>
                         </div>
@@ -88,7 +88,7 @@
                 <div class="col-md-5">
                     <div class="form-group">
                         <label asp-for="PROBLEMS" class="control-label"></label>
-                        <input asp-for="PROBLEMS" class="form-control input-sm" />
+                        <input asp-for="PROBLEMS" class="form-control input-sm" value="cough and fever"/>
                         <span asp-validation-for="PROBLEMS" class="text-danger"></span>
                     </div>
                 </div>
@@ -97,17 +97,17 @@
                         <div class="row">
                             <div class="col">
                                 <label asp-for="VISIT_TYPE" class="control-label"></label>
-                                <input asp-for="VISIT_TYPE" class="form-control input-sm" />
+                                <input asp-for="VISIT_TYPE" class="form-control input-sm"/>
                                 <span asp-validation-for="VISIT_TYPE" class="text-danger"></span>
                             </div>
                             <div class="col">
                                 <label asp-for="VISIT_FEES" class="control-label"></label>
-                                <input asp-for="VISIT_FEES" class="form-control input-sm" />
+                                <input asp-for="VISIT_FEES" class="form-control input-sm"/>
                                 <span asp-validation-for="VISIT_FEES" class="text-danger"></span>
                             </div>
                             <div class="col">
                                 <label asp-for="REF_PRESCRIPTIONS_NUMBER" class="control-label"></label>
-                                <input asp-for="REF_PRESCRIPTIONS_NUMBER" class="form-control input-sm" />
+                                <input asp-for="REF_PRESCRIPTIONS_NUMBER" class="form-control input-sm"/>
                                 <span asp-validation-for="REF_PRESCRIPTIONS_NUMBER" class="text-danger"></span>
                             </div>
                         </div>
@@ -131,13 +131,13 @@
                 <div class="tab-pane fade show active" id="drugs" role="tabpanel" aria-labelledby="drugs-tab">
                     <div class="row">
                         <div class="col">
-                            <input id="drugs_name" type="text" class="form-control input-sm" placeholder="Drugs Name">
+                            <input id="drugs_name" type="text" class="form-control input-sm" placeholder="Drugs Name" value="Napa Extra">
                         </div>
                         <div class="col">
-                            <input id="frequency" type="text" class="form-control input-sm" placeholder="Frequency">
+                            <input id="frequency" type="text" class="form-control input-sm" placeholder="Frequency" value="1-0-1">
                         </div>
                         <div class="col">
-                            <input id="duration" type="text" class="form-control input-sm" placeholder="Duration">
+                            <input id="duration" type="text" class="form-control input-sm" placeholder="Duration" value="5 Days">
                         </div>
                         <div class="col">
                             <input type="button" value="Add" class="btn btn-primary input-sm" onclick="addDrugrs();">
@@ -164,13 +164,13 @@
                 <div class="tab-pane fade" id="investigations" role="tabpanel" aria-labelledby="investigations-tab">
                     <div class="row">
                         <div class="col">
-                            <input id="invest_name" type="text" class="form-control input-sm" placeholder="Investigation Name">
+                            <input id="invest_name" type="text" class="form-control input-sm" placeholder="Investigation Name" value="CBC">
                         </div>
                         <div class="col">
-                            <input id="invest_instr" type="text" class="form-control input-sm" placeholder="Instruction">
+                            <input id="invest_instr" type="text" class="form-control input-sm" placeholder="Instruction" value="Take Care">
                         </div>
                         <div class="col">
-                            <input id="ref_diagnostic" type="text" class="form-control input-sm" placeholder="Ref. Diagnostics">
+                            <input id="ref_diagnostic" type="text" class="form-control input-sm" placeholder="Ref. Diagnostics" value="Ibn Sina">
                         </div>
                         <div class="col">
                             <input type="button" value="Add" class="btn btn-primary input-sm" onclick="addInves();">
@@ -200,7 +200,8 @@
                 </div>
             </div>
         </div>
-        <input id="saveForm" type="submit" value="save"/>
+        <input id="saveForm" type="submit" value="Save" class="btn btn-danger input-sm"/>
+        <input type="button" value="Reload" onclick="location.reload();" class="btn btn-secondary input-sm"/>
     </form>
 </div>
 

@@ -12,12 +12,14 @@ namespace EMR.DataAccess
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             // decimal value precision
-            modelBuilder.Entity<PRESCRIPTIONS>().Property(x => x.VISIT_FEES).HasPrecision(3, 2);
+            modelBuilder.Entity<PRESCRIPTIONS>().Property(x => x.TEMPERATURE).HasPrecision(5, 2);
+            modelBuilder.Entity<PRESCRIPTIONS>().Property(x => x.WEIGHT).HasPrecision(5, 2);
+            modelBuilder.Entity<PRESCRIPTIONS>().Property(x => x.VISIT_FEES).HasPrecision(10, 2);
             modelBuilder.Entity<PRESCRIPTIONS_DRUGS>()
-              .HasKey(c => new { c.PRESCRIPTIONS_ID, c.LINE_NO })
-              .HasName("PK_PRESCRIPTIONS_DRUGS");
+                .HasKey(c => new { c.PRESCRIPTIONS_ID, c.LINE_NO })
+                .HasName("PK_PRESCRIPTIONS_DRUGS");
             modelBuilder.Entity<PRESCRIPTIONS_INVES>()
-               .HasKey(c => new { c.PRESCRIPTIONS_ID, c.LINE_NO })
+                .HasKey(c => new { c.PRESCRIPTIONS_ID, c.LINE_NO })
                 .HasName("PK_PRESCRIPTIONS_INVES");
         }
         public DbSet<PATIENTS> PATIENTS { get; set; }
@@ -34,7 +36,7 @@ namespace EMR.DataAccess
         public DbSet<DRUG_GENERICS> DRUG_GENERICS { get; set; }
         public DbSet<DRUGS> DRUGS { get; set; }
         public DbSet<DOCTOR_PRESCRIPTIONS> DOCTOR_PRESCRIPTIONS { get; set; }
-        
+
     }
 
 }

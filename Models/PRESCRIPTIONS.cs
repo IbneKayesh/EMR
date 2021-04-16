@@ -8,6 +8,25 @@ namespace EMR.Models
 {
     public class PRESCRIPTIONS
     {
+        public PRESCRIPTIONS()
+        {
+            DOCTORS_ID = 1;
+            PRESCRIBE_DATE = DateTime.Now;
+            PATIENTS_MOBILE_NUMBER = "019000000";
+            PATIENTS_NAME = "Mr. Seek";
+            AGE_YEAR = 17;
+            PATIENTS_SEX = "Male";
+            BLOOD_GROUP = "O+";
+            BP = "120/90";
+            TEMPERATURE = 98M;
+            WEIGHT = 67M;
+            PROBLEMS = "fever and cough";
+            VISIT_TYPE = "New Visit";
+            VISIT_FEES = 50M;
+            REF_PRESCRIPTIONS_NUMBER = "0";
+            REQUIRED_ADMISSION = false;
+            INSTRUCTIONS = "n/a";
+        }
         public Int64 ID { get; set; }
         public int DOCTORS_ID { get; set; }
         public string PRESCRIPTIONS_NUMBER { get; set; }
@@ -32,9 +51,9 @@ namespace EMR.Models
         [Display(Name = "BP")]
         public string BP { get; set; }
         [Display(Name = "Temp")]
-        public string TEMPERATURE { get; set; }
+        public decimal TEMPERATURE { get; set; }
         [Display(Name = "Weight")]
-        public string WEIGHT { get; set; }
+        public decimal WEIGHT { get; set; }
         [Display(Name = "Problems")]
         public string PROBLEMS { get; set; }
         [Display(Name = "Visit")]
